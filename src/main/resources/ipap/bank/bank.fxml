@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="353.0" style="-fx-background-color: #E6F2FF;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ipap.bank.BankController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="7.0" prefHeight="17.0" prefWidth="119.0" style="fx-font-weight: : ,old; fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0.5, 4, 4); -fx-font-size: 30px; fx-padding: : 10px;" text="Bank" textAlignment="CENTER" textFill="#0d1357" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ListView fx:id="listDebitCard" layoutX="16.0" layoutY="91.0" onEditStart="#listDebitCard" prefHeight="101.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-selection-bar: #90CAF9; -fx-selection-bar-non-focused: #E3F2FD; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" />
+      <Label layoutX="16.0" layoutY="61.0" prefHeight="17.0" prefWidth="81.0" text="Карты" textFill="#0e0e75e3">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="createDebitCard" layoutX="97.0" layoutY="56.0" mnemonicParsing="false" onAction="#createDebitCard" prefHeight="27.0" prefWidth="119.0" style="-fx-background-color: linear-gradient(to bottom, #D0E8FF, #79B6F2); -fx-background-radius: 8; -fx-text-fill: #060651; fx-font-weight: bold; -fx-effect: ropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 3);" text="Оформить карту" textFill="#060651">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="closeDebitCard" layoutX="229.0" layoutY="55.0" mnemonicParsing="false" onAction="#closeDebitCard" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: linear-gradient(to bottom, #D0E8FF, #79B6F2); -fx-background-radius: 8; -fx-text-fill: #060651; fx-font-weight: bold; -fx-effect: ropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 3);" text="Закрыть карту" textFill="#060651" />
+      <ListView fx:id="listCreditCard" layoutX="16.0" layoutY="250.0" onEditStart="#listCreditCard" prefHeight="82.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-selection-bar: #90CAF9; -fx-selection-bar-non-focused: #E3F2FD; -fx-focus-colo: transparent; -fx-faint-focus-color: transparent;" />
+      <Label layoutX="16.0" layoutY="221.0" prefHeight="17.0" prefWidth="81.0" text="Кредиты" textFill="#060651">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="createCreditCard" layoutX="89.0" layoutY="213.0" mnemonicParsing="false" onAction="#createCreditCard" prefHeight="17.0" prefWidth="135.0" style="-fx-background-color: linear-gradient(to bottom, #D0E8FF, #79B6F2); -fx-background-radius: 8; fx-font-weight: bold; -fx-effect: ropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 3);" text="Получить кредит" textFill="#060651">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <VBox layoutX="16.0" layoutY="399.0" prefHeight="170.0" prefWidth="322.0" style="-fx-background-color: white;">
+         <children>
+            <Label prefHeight="17.0" prefWidth="318.0" text="С какой карты" textFill="#060651" />
+            <ChoiceBox fx:id="fromCard" blendMode="SRC_ATOP" prefHeight="25.0" prefWidth="320.0" style="-fx-background-color: #E6F2FF; -fx-selection-bar: #90CAF9; -fx-selection-bar-non-focused: #E3F2FD; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" />
+            <Label prefHeight="17.0" prefWidth="318.0" text="На какую карту" textFill="#060651" />
+            <ChoiceBox fx:id="toCard" prefHeight="25.0" prefWidth="320.0" style="-fx-background-color: #E6F2FF; -fx-selection-bar: #90CAF9; -fx-selection-bar-non-focused: #E3F2FD; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" />
+            <TextField fx:id="amount" prefHeight="25.0" prefWidth="322.0" promptText="введите сумму" />
+            <Button fx:id="transferMoney" mnemonicParsing="false" onAction="#transferMoney" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: linear-gradient(to bottom, #D0E8FF, #79B6F2); -fx-background-radius: 8;" text="перевести" textFill="#060651">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Label fx:id="messageTransfer" prefHeight="17.0" prefWidth="322.0" textFill="#940f0f" />
+         </children>
+      </VBox>
+      <Label layoutX="16.0" layoutY="369.0" prefHeight="17.0" prefWidth="81.0" style="-fx-font-size: 16px; fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0.5, 4, 4);" text="Переводы" textFill="#060651">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="messageDebitCard" layoutX="16.0" layoutY="194.0" prefHeight="17.0" prefWidth="322.0" />
+      <Label fx:id="messageCreditCard" layoutX="16.0" layoutY="336.0" prefHeight="17.0" prefWidth="322.0" />
+   </children>
+</AnchorPane>
